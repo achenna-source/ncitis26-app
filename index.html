@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className += " js";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCITIS’26 · Batna 2</title>
+<meta name="description" content="NCITIS’26, the Second National Conference on Information Technology and Intelligent Systems, Faculty of Mathematics and Informatics, University of Batna 2, Algeria, 13–14 December 2026.">
+<link rel="icon" type="image/png" href="assets/logo-univ-batna2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#071631;
+  --navy-900:#0b1f40;
+  --navy-800:#12305e;
+  --navy-700:#1a3f78;
+  --blue-600:#1f6fd1;
+  --blue-500:#2f86e0;
+  --blue-100:#e6f0fc;
+  --gold-500:#e3a92b;
+  --gold-400:#efbf4f;
+  --gold-100:#fdf3dc;
+  --ink:#13203a;
+  --muted:#56637b;
+  --line:#e1e6ef;
+  --bg:#f4f6fa;
+  --card:#ffffff;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(11,31,64,.06),0 8px 24px rgba(11,31,64,.07);
+  --display:"Barlow Condensed","Arial Narrow","Roboto Condensed","Segoe UI",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blue-600)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold-400);outline-offset:3px;border-radius:6px}
+.container{width:100%;max-width:1160px;margin:0 auto;padding:0 20px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.header-row{display:flex;align-items:center;gap:18px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy-900);flex-shrink:0}
+.brand img{height:44px;width:auto}
+.brand .word{font:800 26px/1 var(--display);letter-spacing:.01em}
+.brand .word span{color:var(--blue-600)}
+.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:14.5px;padding:8px 11px;border-radius:999px;transition:background .2s,color .2s}
+.nav a:hover{color:var(--navy-900);background:var(--blue-100)}
+.nav a.active{color:var(--navy-900);background:var(--blue-100)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:600 15px/1 var(--body);text-decoration:none;border-radius:999px;padding:14px 22px;transition:transform .15s,box-shadow .2s,background .2s;border:0;cursor:pointer}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold-400);color:var(--navy-950);box-shadow:0 6px 18px rgba(227,169,43,.35)}
+.btn-gold:hover{background:#f5c95f}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.15)}
+.btn-navy{background:var(--navy-800);color:#fff}
+.btn-navy:hover{background:var(--navy-700)}
+.header-cta{padding:10px 16px;font-size:14px;flex-shrink:0}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:
+  radial-gradient(1200px 500px at 85% -10%,rgba(47,134,224,.45),transparent 60%),
+  radial-gradient(700px 400px at -10% 110%,rgba(227,169,43,.18),transparent 60%),
+  linear-gradient(160deg,var(--navy-950),var(--navy-800) 70%,var(--navy-700))}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,transparent,#000 40%,#000);-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%,#000);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center;padding:64px 0 72px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-400)}
+.kicker::before{content:"";width:34px;height:2px;background:var(--gold-400)}
+.acronym{font:800 clamp(64px,10vw,124px)/.9 var(--display);letter-spacing:.005em;margin:14px 0 6px}
+.acronym span{background:linear-gradient(90deg,var(--blue-500),#7fc0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold-rule{width:min(360px,70%);height:3px;background:linear-gradient(90deg,var(--gold-400),rgba(239,191,79,0));border-radius:3px;margin:12px 0 18px}
+.hero h1{font:700 clamp(28px,3.6vw,44px)/1.1 var(--display);margin:0 0 24px;max-width:640px;letter-spacing:.005em}
+.meta{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:12px}
+.meta li{display:flex;align-items:center;gap:12px;font-size:16px;color:#dbe6f7}
+.meta strong{color:#fff;font-weight:600}
+.meta .ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(47,134,224,.25);box-shadow:inset 0 0 0 1.5px rgba(127,192,255,.45);flex-shrink:0}
+.meta .ic svg{width:18px;height:18px;color:#bfe0ff}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.deadline-chip{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:9px 16px 9px 10px;border-radius:999px;font-size:14px;color:#dbe6f7}
+.deadline-chip .dot{width:9px;height:9px;border-radius:50%;background:var(--gold-400);box-shadow:0 0 0 0 rgba(239,191,79,.6);animation:pulse 2s infinite}
+.deadline-chip strong{color:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,191,79,.55)}70%{box-shadow:0 0 0 10px rgba(239,191,79,0)}100%{box-shadow:0 0 0 0 rgba(239,191,79,0)}}
+
+.hero-visual{position:relative;min-height:400px;display:grid;place-items:center}
+.hero-visual .network{position:absolute;inset:-30px -60px -30px -40px;width:calc(100% + 100px);height:calc(100% + 60px);opacity:.9}
+.logo-card{position:relative;background:#fff;border-radius:24px;padding:22px 26px;display:flex;align-items:center;gap:22px;box-shadow:0 24px 60px rgba(3,10,25,.45);border:2px solid var(--gold-400)}
+.logo-card::after{content:"";position:absolute;inset:8px;border-radius:17px;border:1px dashed rgba(227,169,43,.45);pointer-events:none}
+.logo-card img{height:150px;width:auto}
+.logo-card .sep{width:1px;align-self:stretch;background:var(--line)}
+.network .ln{stroke:rgba(127,192,255,.35);stroke-width:1.2}
+.network .ln.g{stroke:rgba(239,191,79,.45)}
+.network .nd{fill:#7fc0ff}
+.network .nd.g{fill:var(--gold-400)}
+.network .halo{fill:none;stroke:rgba(127,192,255,.5);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:ring 3.2s ease-out infinite}
+.network .halo.g{stroke:rgba(239,191,79,.6);animation-delay:1.2s}
+.network .orbit{fill:none;stroke:rgba(255,255,255,.12);stroke-width:1.2;stroke-dasharray:3 7}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+
+/* Key facts band */
+.facts{position:relative;margin-top:-36px;z-index:2}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.fact{padding:20px 22px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact .k{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font:700 25px/1.15 var(--display);color:var(--navy-900);margin-top:6px}
+
+/* Sections */
+section{padding:84px 0 0}
+section:last-of-type{padding-bottom:84px}
+.sec-head{margin-bottom:30px}
+.sec-label{display:inline-flex;align-items:stretch;font:700 15px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.sec-label .num{background:var(--gold-400);color:var(--navy-950);padding:8px 10px 7px}
+.sec-label .txt{background:var(--navy-900);padding:8px 16px 7px 12px;position:relative;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);padding-right:26px}
+.sec-label::after{content:"";width:22px;margin-left:-10px;background:var(--blue-600);clip-path:polygon(12px 0,22px 0,10px 100%,0 100%)}
+h2{font:700 clamp(32px,4.2vw,46px)/1.05 var(--display);color:var(--navy-900);margin:16px 0 10px;letter-spacing:.005em}
+.lead{color:var(--muted);font-size:17.5px;max-width:780px;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px}
+.about-text{padding:30px 32px}
+.about-text p{margin:0 0 14px}
+.about-text p:last-child{margin-bottom:0}
+.cfp-btn{margin-top:22px}
+.labs{display:grid;gap:12px;margin-top:22px}
+.lab{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.lab .tag{font:800 15px/1 var(--display);letter-spacing:.06em;background:var(--navy-900);color:#fff;padding:8px 10px;border-radius:8px;flex-shrink:0}
+.lab .tag.g{background:var(--gold-400);color:var(--navy-950)}
+.lab p{margin:0;font-size:14.5px;color:var(--muted)}
+.chairs{padding:26px 26px 18px;background:linear-gradient(180deg,#fff,#fbfcfe)}
+.chairs h3{font:700 24px/1.1 var(--display);margin:0 0 14px;color:var(--navy-900)}
+.chair{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line)}
+.chair:first-of-type{border-top:0}
+.avatar{width:42px;height:42px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font:700 16px/1 var(--display);letter-spacing:.04em;color:var(--navy-900);background:var(--blue-100);box-shadow:inset 0 0 0 2px #fff,0 0 0 1.5px var(--blue-500)}
+.avatar.g{background:var(--gold-100);box-shadow:inset 0 0 0 2px #fff,0 0 0 1.5px var(--gold-500)}
+.chair .role{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--blue-600)}
+.chair .name{font-weight:600;color:var(--ink)}
+.chair .aff{font-size:13.5px;color:var(--muted)}
+
+/* Topics */
+.axes{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.axis{position:relative;padding:28px 28px 24px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.axis:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(11,31,64,.06),0 18px 40px rgba(11,31,64,.12)}
+.axis::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue-500),var(--navy-700))}
+.axis:nth-child(even)::before{background:linear-gradient(180deg,var(--gold-400),var(--gold-500))}
+.axis .num{position:absolute;right:18px;top:6px;font:800 84px/1 var(--display);color:rgba(11,31,64,.05)}
+.axis .ax{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-600)}
+.axis:nth-child(even) .ax{color:#b9831a}
+.axis h3{font:700 27px/1.1 var(--display);color:var(--navy-900);margin:6px 0 10px;max-width:90%}
+.axis p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--blue-100);color:var(--navy-800)}
+.axis:nth-child(even) .chips li{background:var(--gold-100);color:#6b4b0b}
+
+/* Dates */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.timeline::before{content:"";position:absolute;left:24px;right:24px;top:31px;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.step{position:relative;padding:0 6px}
+.step .marker{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--line);position:relative;z-index:1;color:var(--navy-800);transition:all .2s}
+.step .marker svg{width:24px;height:24px}
+.step .when{font:700 26px/1.1 var(--display);color:var(--navy-900);margin-top:16px}
+.step .what{font-weight:600;font-size:15px;margin-top:4px}
+.step .state{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--bg);color:var(--muted)}
+.step.next .marker{background:var(--navy-900);border-color:var(--navy-900);color:var(--gold-400);box-shadow:0 0 0 6px rgba(31,111,209,.15)}
+.step.next .state{background:var(--gold-400);color:var(--navy-950)}
+.step.done .marker{background:var(--blue-100);border-color:var(--blue-100);color:var(--blue-600)}
+.step.done .when,.step.done .what{color:var(--muted)}
+.step.conf .marker{border-color:var(--gold-400)}
+
+/* Submission */
+.submit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:22px}
+.link-card{display:flex;flex-direction:column;gap:14px;padding:30px;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.link-card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(11,31,64,.06),0 22px 48px rgba(11,31,64,.14)}
+.link-card .badge{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:var(--blue-100);color:var(--blue-600)}
+.link-card .badge svg{width:28px;height:28px}
+.link-card.primary{background:linear-gradient(150deg,var(--navy-900),var(--navy-700));color:#fff;border-color:transparent}
+.link-card.primary .badge{background:rgba(239,191,79,.16);color:var(--gold-400)}
+.link-card .step-no{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-600)}
+.link-card.primary .step-no{color:var(--gold-400)}
+.link-card h3{font:700 30px/1.08 var(--display);margin:0;color:var(--navy-900)}
+.link-card.primary h3{color:#fff}
+.link-card p{margin:0;color:var(--muted);font-size:15px}
+.link-card.primary p{color:#c9d7ee}
+.link-card .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--blue-600)}
+.link-card.primary .go{color:var(--gold-400)}
+.link-card .go svg{width:18px;height:18px;transition:transform .2s}
+.tpl-card:hover{transform:none;box-shadow:var(--shadow)}
+.tpl-card .go{text-decoration:none}
+.tpl-card .go:hover svg{transform:translate(3px,-3px)}
+.tpl-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.tpl-actions form{margin:0}
+.tpl-note{font-size:13px;color:var(--muted)}
+.btn-outline{background:#fff;color:var(--navy-900);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-outline:hover{box-shadow:inset 0 0 0 1.5px var(--navy-700)}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.link-card:hover .go svg{transform:translate(3px,-3px)}
+.link-card .host{font-size:12.5px;color:#8a96ab;font-family:ui-monospace,Consolas,monospace}
+.link-card.primary .host{color:#8fa7cc}
+.howto{padding:26px 30px}
+.howto h3{font:700 22px/1.1 var(--display);margin:0 0 14px;color:var(--navy-900)}
+.howto ol{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.howto li{counter-increment:s;font-size:14.5px;color:var(--muted)}
+.howto li::before{content:counter(s,decimal-leading-zero);display:block;font:800 30px/1 var(--display);color:var(--gold-500);margin-bottom:6px}
+.howto li strong{color:var(--ink)}
+
+/* Registration */
+.reg-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}
+.fees{overflow:hidden}
+.fees table{width:100%;border-collapse:collapse;font-size:15px}
+.fees caption{text-align:left;padding:22px 24px 6px;font:700 22px/1.1 var(--display);color:var(--navy-900)}
+.fees th,.fees td{padding:13px 24px;text-align:left;border-bottom:1px solid var(--line)}
+.fees thead th{white-space:nowrap;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg)}
+.fees td.amt{font:700 20px/1 var(--display);color:var(--navy-900);white-space:nowrap}
+.fees td.na{color:#a3adbf}
+.fees sup{color:#b9831a;font-weight:700;margin-left:2px}
+.fees tbody tr:last-child > *{border-bottom:0}
+.fees .note{padding:14px 24px 20px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);background:#fbfcfe}
+.tbc{display:inline-block;font:600 11px/1 var(--body);letter-spacing:.04em;text-transform:uppercase;color:#8a5a00;background:var(--gold-100);border:1px solid #f1d58f;padding:3px 7px;border-radius:999px;vertical-align:middle;margin-left:6px}
+.reg-side{display:grid;gap:20px}
+.box{padding:24px 26px}
+.box h3{font:700 22px/1.1 var(--display);margin:0 0 12px;color:var(--navy-900)}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.check li{display:flex;gap:10px;font-size:15px}
+.check li::before{content:"";flex-shrink:0;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--blue-100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f6fd1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.box p{margin:0 0 10px;font-size:15px;color:var(--muted)}
+.fields{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px;padding:0;list-style:none}
+.fields li{font-size:13px;padding:4px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.bank{background:linear-gradient(150deg,var(--navy-900),var(--navy-800));color:#dbe6f7;border:0}
+.bank h3{color:#fff}
+.bank dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14.5px}
+.bank dt{color:#94abd0}
+.bank dd{margin:0;color:#fff;font-weight:500;word-break:break-word}
+.bank .mono{font-family:ui-monospace,Consolas,monospace;letter-spacing:.03em}
+.bank .tbc{background:rgba(239,191,79,.15);border-color:rgba(239,191,79,.4);color:var(--gold-400)}
+
+/* Committees */
+.comm-tabs{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.tab{font:600 15px/1 var(--body);padding:12px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--navy-900);border-color:var(--navy-900);color:#fff}
+.tab .count{display:inline-block;margin-left:6px;font-size:12px;padding:2px 7px;border-radius:999px;background:var(--bg);color:var(--muted)}
+.tab[aria-selected="true"] .count{background:var(--gold-400);color:var(--navy-950)}
+.search{margin-left:auto;position:relative}
+.search input{font:15px var(--body);padding:11px 14px 11px 40px;border-radius:999px;border:1.5px solid var(--line);background:#fff;width:260px;color:var(--ink)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--muted)}
+.panel{padding:26px}
+.panel[hidden]{display:none}
+.panel-chair{display:flex;align-items:center;gap:14px;padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.panel-chair .role{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b9831a}
+.panel-chair .name{font:700 22px/1.1 var(--display);color:var(--navy-900)}
+.members{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px 22px}
+.members li{padding:8px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column}
+.members li .n{font-weight:500;font-size:15px}
+.members li .n b{font-weight:700;letter-spacing:.01em}
+.members li .a{font-size:12.5px;color:var(--muted)}
+.members li.ext .a{color:var(--blue-600);font-weight:500}
+.empty{padding:16px 0 4px;color:var(--muted);font-size:15px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.contact{padding:24px 26px;display:flex;gap:16px;align-items:flex-start}
+.contact .ic{width:48px;height:48px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;background:var(--navy-900);color:var(--gold-400)}
+.contact .ic svg{width:22px;height:22px}
+.contact .k{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.contact .v{font-weight:600;word-break:break-word}
+.contact .v a{text-decoration:none}
+.contact .v a:hover{text-decoration:underline}
+
+/* App band */
+.app-band{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:34px 36px;border-radius:24px;color:#dbe6f7;background:radial-gradient(600px 300px at 100% 0%,rgba(47,134,224,.4),transparent 60%),linear-gradient(150deg,var(--navy-900),var(--navy-700));box-shadow:var(--shadow)}
+.app-band h2{color:#fff;margin:14px 0 10px}
+.app-band p{margin:0 0 16px;max-width:560px}
+.app-feats{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 22px;padding:0}
+.app-feats li{font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff}
+.app-qr{background:#fff;border-radius:20px;padding:16px 16px 12px;border:2px solid var(--gold-400);text-align:center;color:var(--navy-900);font-size:13px;font-weight:600}
+.app-qr img{width:190px;height:190px;margin:0 auto 6px}
+@media (max-width:760px){.app-band{grid-template-columns:1fr;padding:26px 22px}.app-qr{justify-self:center}}
+
+/* Footer */
+.site-footer{background:var(--navy-950);color:#b9c9e3;position:relative;overflow:hidden}
+.site-footer::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(47,134,224,.12));pointer-events:none}
+.foot-grid{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:36px 0}
+.foot-logo{background:#fff;border-radius:16px;padding:10px 12px;display:flex;gap:10px;align-items:center}
+.foot-logo img{height:62px;width:auto}
+.foot-title{font:700 26px/1.1 var(--display);color:#fff}
+.foot-sub{font-size:14px}
+.foot-links{display:grid;gap:8px;font-size:14px;border-left:1px solid rgba(255,255,255,.14);padding-left:24px}
+.foot-links a{color:#fff;text-decoration:none}
+.foot-links a:hover{text-decoration:underline}
+.foot-links span{display:flex;gap:10px;align-items:center}
+.foot-links svg{width:16px;height:16px;color:var(--gold-400);flex-shrink:0}
+.foot-bottom{position:relative;border-top:1px solid rgba(255,255,255,.1);padding:14px 0;font-size:12.5px;color:#7f93b5;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cmt-ack{position:relative;font-size:12.5px;line-height:1.55;color:#8fa3c4;padding-bottom:16px}
+.cmt-ack p{margin:0;max-width:900px}
+.cmt-ack strong{color:#c9d6ec;font-weight:600}
+.gold-bar{height:4px;background:linear-gradient(90deg,var(--gold-400),var(--blue-600))}
+
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;padding:48px 0 80px}
+  .hero-visual{min-height:280px;margin-top:10px}
+  .about-grid,.reg-grid{grid-template-columns:1fr}
+  .howto ol{grid-template-columns:repeat(2,1fr)}
+  .members{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .header-cta{display:none}
+}
+@media (max-width:760px){
+  .container{padding:0 16px}
+  .header-row{height:60px;gap:10px}
+  .brand img{height:36px}
+  .brand .word{font-size:22px}
+  .facts-grid{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2){border-right:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .axes,.submit-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr;gap:0}
+  .timeline::before{left:30px;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--line) 0 8px,transparent 8px 14px)}
+  .step{display:grid;grid-template-columns:62px 1fr;column-gap:18px;padding:0 0 22px}
+  .step .marker{grid-row:1/4}
+  .step .when{margin-top:4px}
+  .step .state{justify-self:start}
+  .search{margin-left:0;width:100%}
+  .search input{width:100%}
+  .members{grid-template-columns:1fr 1fr;gap:2px 14px}
+  .members li .n{font-size:14px}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-links{border-left:0;padding-left:0}
+  .logo-card img{height:96px}
+  .logo-card{padding:16px 18px;gap:16px}
+  .about-text,.howto,.panel{padding:22px}
+  .fees thead th{white-space:normal}
+  .fees table{font-size:14px}
+  .fees th,.fees td{padding:12px 10px}
+  .fees th:first-child,.fees td:first-child{padding-left:14px}
+  .fees td.amt{font-size:18px}
+  .fees caption{padding:20px 14px 6px}
+  .fees .note{padding:14px}
+  section{padding-top:64px}
+}
+@media (max-width:360px){
+  .members{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .howto ol{grid-template-columns:1fr}
+  .nav{display:none}
+  .site-header .mobile-nav{display:flex}
+  .cta-row .btn{width:100%}
+}
+.mobile-nav{display:none;gap:6px;overflow-x:auto;padding:8px 16px;border-top:1px solid var(--line);scrollbar-width:none}
+.mobile-nav::-webkit-scrollbar{display:none}
+.mobile-nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;padding:6px 11px;border-radius:999px;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="#top" aria-label="NCITIS’26 home">
+      <img src="assets/logo-univ-batna2.png" alt="University of Batna 2 logo">
+      <img src="assets/logo-faculte-mi.png" alt="Faculty of Mathematics and Informatics logo">
+      <span class="word">NCITIS<span>’26</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#dates">Dates</a>
+      <a href="#submission">Submission</a>
+      <a href="#registration">Registration</a>
+      <a href="#committees">Committees</a>
+      <a href="#contact">Contact</a>
+      <a href="#app">App</a>
+    </nav>
+    <a class="btn btn-navy header-cta" href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FNCITIS2026%2F" target="_blank" rel="noopener">Submit a paper</a>
+  </div>
+  <nav class="mobile-nav" aria-label="Sections">
+    <a href="#about">About</a><a href="#topics">Topics</a><a href="#dates">Dates</a><a href="#submission">Submission</a><a href="#registration">Registration</a><a href="#committees">Committees</a><a href="#contact">Contact</a><a href="#app">App</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Call for papers · 2nd edition</span>
+      <div class="acronym">NCITIS <span>’26</span></div>
+      <div class="gold-rule"></div>
+      <h1>The Second National Conference on Information Technology and Intelligent Systems</h1>
+      <ul class="meta">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></span><span><strong>13–14 December 2026</strong></span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><strong>Faculty of Mathematics and Informatics</strong>, University of Batna 2, Algeria</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/></svg></span><span>National conference, in collaboration with the <strong>LASTIC</strong> and <strong>LAMIE</strong> laboratories</span></li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="assets/NCITIS26-extended-abstract-template.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Download the template (.zip)
+        </a>
+        <a class="btn btn-ghost" href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FNCITIS2026%2F" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+          Submit on Microsoft CMT
+        </a>
+      </div>
+      <div class="deadline-chip" id="deadline-chip"><span class="dot"></span><span id="deadline-text">Abstract submission deadline: <strong>25 November 2026</strong></span></div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="false">
+      <svg class="network" viewBox="0 0 600 440" aria-hidden="true">
+        <circle class="orbit" cx="300" cy="220" r="150"/>
+        <circle class="orbit" cx="300" cy="220" r="205"/>
+        <g>
+          <line class="ln" x1="60" y1="70" x2="170" y2="40"/>
+          <line class="ln" x1="170" y1="40" x2="300" y2="20"/>
+          <line class="ln g" x1="300" y1="20" x2="450" y2="50"/>
+          <line class="ln" x1="450" y1="50" x2="560" y2="110"/>
+          <line class="ln" x1="60" y1="70" x2="40" y2="210"/>
+          <line class="ln g" x1="40" y1="210" x2="80" y2="350"/>
+          <line class="ln" x1="80" y1="350" x2="200" y2="415"/>
+          <line class="ln" x1="200" y1="415" x2="360" y2="425"/>
+          <line class="ln g" x1="360" y1="425" x2="500" y2="390"/>
+          <line class="ln" x1="500" y1="390" x2="575" y2="280"/>
+          <line class="ln" x1="575" y1="280" x2="560" y2="110"/>
+          <line class="ln" x1="170" y1="40" x2="40" y2="210"/>
+          <line class="ln" x1="450" y1="50" x2="575" y2="280"/>
+          <line class="ln g" x1="80" y1="350" x2="40" y2="210"/>
+          <line class="ln" x1="500" y1="390" x2="360" y2="425"/>
+        </g>
+        <g>
+          <circle class="nd" cx="60" cy="70" r="4"/>
+          <circle class="nd g" cx="170" cy="40" r="5"/>
+          <circle class="nd" cx="300" cy="20" r="4"/>
+          <circle class="nd g" cx="450" cy="50" r="5"/>
+          <circle class="nd" cx="560" cy="110" r="4"/>
+          <circle class="nd" cx="40" cy="210" r="5"/>
+          <circle class="nd g" cx="80" cy="350" r="4"/>
+          <circle class="nd" cx="200" cy="415" r="4"/>
+          <circle class="nd g" cx="360" cy="425" r="5"/>
+          <circle class="nd" cx="500" cy="390" r="4"/>
+          <circle class="nd g" cx="575" cy="280" r="4"/>
+          <circle class="halo" cx="40" cy="210" r="5"/>
+          <circle class="halo g" cx="450" cy="50" r="5"/>
+          <circle class="halo" cx="360" cy="425" r="5"/>
+        </g>
+      </svg>
+      <div class="logo-card">
+        <img src="assets/logo-univ-batna2.png" alt="University of Batna 2">
+        <span class="sep" aria-hidden="true"></span>
+        <img src="assets/logo-faculte-mi.png" alt="Faculty of Mathematics and Informatics, University of Batna 2">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY FACTS -->
+<div class="container facts">
+  <div class="facts-grid">
+    <div class="fact"><div class="k">Conference</div><div class="v">13–14 Dec. 2026</div></div>
+    <div class="fact"><div class="k">Abstract deadline</div><div class="v">25 Nov. 2026</div></div>
+    <div class="fact"><div class="k">Notification</div><div class="v">01 Dec. 2026</div></div>
+    <div class="fact"><div class="k">Venue</div><div class="v">Univ. Batna 2</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">01</span><span class="txt">Call for papers</span></div>
+      <h2>A national forum for IT and intelligent systems</h2>
+    </div>
+    <div class="about-grid">
+      <div class="card about-text reveal">
+        <p>NCITIS’26 is organized by the <strong>Faculty of Mathematics and Informatics</strong> at the <strong>University of Batna 2</strong>, Algeria, in collaboration with two research laboratories of the University.</p>
+        <p>The conference aims to create a forum for researchers, faculty members and industry specialists to share insights, exchange ideas and build foundations for collaboration on recent advances and evolving trends in computer science, information technology, intelligent systems and artificial intelligence.</p>
+        <div class="labs">
+          <div class="lab"><span class="tag">LASTIC</span><p>Laboratoire des Systèmes et Technologies de l’Information et de la Communication</p></div>
+          <div class="lab"><span class="tag g">LAMIE</span><p>Laboratoire d’Applications des Mathématiques à l’Informatique et à l’Électronique</p></div>
+        </div>
+        <a class="btn btn-navy cfp-btn" href="assets/NCITIS26-call-for-papers.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Call for papers (PDF)
+        </a>
+      </div>
+      <aside class="card chairs reveal" aria-labelledby="chairs-title">
+        <h3 id="chairs-title">Chairs</h3>
+        <div class="chair"><span class="avatar g">HS</span><div><div class="role">Honorary chair</div><div class="name">Hacene SMADI</div><div class="aff">Rector of the University of Batna 2</div></div></div>
+        <div class="chair"><span class="avatar g">HM</span><div><div class="role">Honorary chair</div><div class="name">Hamouma MOUMEN</div><div class="aff">Dean of the Faculty of Mathematics and Informatics</div></div></div>
+        <div class="chair"><span class="avatar">BB</span><div><div class="role">Conference chair</div><div class="name">Dr. Badreddine BENREGUIA</div><div class="aff">University of Batna 2</div></div></div>
+        <div class="chair"><span class="avatar">BM</span><div><div class="role">Scientific committee chair</div><div class="name">Prof. Bilal MOKHTARI</div><div class="aff">University of Batna 2</div></div></div>
+        <div class="chair"><span class="avatar">AB</span><div><div class="role">Organizing committee chair</div><div class="name">Dr. Abderrazak BENYAHIA</div><div class="aff">University of Batna 2</div></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">02</span><span class="txt">Main topics</span></div>
+      <h2>Four conference axes</h2>
+      <p class="lead">Contributions are invited on, but not limited to, the following tracks.</p>
+    </div>
+    <div class="axes">
+      <article class="card axis reveal">
+        <span class="num" aria-hidden="true">01</span>
+        <div class="ax">Axis 1</div>
+        <h3>Artificial Intelligence and Big Data</h3>
+        <p>Advanced AI methodologies, including machine learning, deep learning, generative AI and data-driven insights across industries, together with frameworks, algorithms and systems for big data analytics and intelligent systems.</p>
+        <ul class="chips"><li>Machine learning and deep learning</li><li>Generative AI and data-driven insights</li><li>Big data analytics and intelligent systems</li></ul>
+      </article>
+      <article class="card axis reveal">
+        <span class="num" aria-hidden="true">02</span>
+        <div class="ax">Axis 2</div>
+        <h3>Human-Centric and Emerging Technologies</h3>
+        <p>Sustainable IT solutions, user experience design and emerging technologies with a social impact, along with the ethical concerns that are crucial for advancing responsible technologies.</p>
+        <ul class="chips"><li>Sustainable IT and user experience</li><li>Emerging technologies and social impact</li><li>Ethical and responsible technologies</li></ul>
+      </article>
+      <article class="card axis reveal">
+        <span class="num" aria-hidden="true">03</span>
+        <div class="ax">Axis 3</div>
+        <h3>Security Strategies for IoT, Cloud and Edge Computing</h3>
+        <p>Innovative strategies, methodologies and solutions for security in interconnected and distributed environments, aiming to secure modern infrastructures and enable secure real-time data processing.</p>
+        <ul class="chips"><li>Cryptography and data integrity</li><li>Secure communication protocols</li><li>Cyber-threat detection and mitigation</li></ul>
+      </article>
+      <article class="card axis reveal">
+        <span class="num" aria-hidden="true">04</span>
+        <div class="ax">Axis 4</div>
+        <h3>Distributed Systems and Blockchain</h3>
+        <p>Advances in distributed computing and blockchain technologies, with an emphasis on reliability, scalability and innovative applications in healthcare, supply chain and other domains. Use cases and theoretical advances are highly encouraged.</p>
+        <ul class="chips"><li>Reliability and scalability</li><li>Blockchain applications and innovation</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DATES -->
+<section id="dates">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">03</span><span class="txt">Important dates</span></div>
+      <h2>Key deadlines</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="step" data-end="2026-11-25T23:59:59+01:00">
+        <div class="marker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+        <div class="when">25 November 2026</div>
+        <div class="what">Abstract submission deadline</div>
+        <span class="state">Upcoming</span>
+      </div>
+      <div class="step" data-end="2026-12-01T23:59:59+01:00">
+        <div class="marker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></div>
+        <div class="when">01 December 2026</div>
+        <div class="what">Author notification</div>
+        <span class="state">Upcoming</span>
+      </div>
+      <div class="step" data-end="2026-12-03T23:59:59+01:00">
+        <div class="marker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M9 13.5l2.2 2.2L15.5 11"/></svg></div>
+        <div class="when">02–03 December 2026</div>
+        <div class="what">Author registration deadline</div>
+        <span class="state">Upcoming</span>
+      </div>
+      <div class="step conf" data-end="2026-12-14T23:59:59+01:00">
+        <div class="marker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8 14h3"/></svg></div>
+        <div class="when">13–14 December 2026</div>
+        <div class="what">Conference days</div>
+        <span class="state">Upcoming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBMISSION -->
+<section id="submission">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">04</span><span class="txt">Submission</span></div>
+      <h2>Submit a short paper</h2>
+      <p class="lead">Short papers take the form of a 2-page extended abstract (about 800–1,200 words), written with the official NCITIS’26 template and submitted through Microsoft CMT.</p>
+    </div>
+    <div class="submit-grid">
+      <div class="card link-card tpl-card reveal">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+        <span class="step-no">Step 1 · Prepare</span>
+        <h3>Extended abstract template</h3>
+        <p>Use the official LaTeX template to write your 2-page extended abstract (about 800–1,200 words), keeping its layout. The bibliography is compiled with biber.</p>
+        <div class="tpl-actions">
+          <form id="overleaf-form" action="https://www.overleaf.com/docs" method="post" target="_blank">
+            <input type="hidden" name="snip_uri" id="snip-uri" value="">
+            <input type="hidden" name="snip_name" value="NCITIS26 extended abstract">
+            <button class="btn btn-navy" type="submit" id="overleaf-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg>Open in Overleaf</button>
+          </form>
+          <a class="btn btn-outline" href="assets/NCITIS26-extended-abstract-template.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download (.zip)</a>
+        </div>
+        <span class="tpl-note" id="overleaf-note">“Open in Overleaf” creates your own copy of the template in your Overleaf account.</span>
+        <a class="go" href="assets/NCITIS26-template-preview.pdf" target="_blank" rel="noopener">Preview the template (PDF) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+      <a class="card link-card primary reveal" href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FNCITIS2026%2F" target="_blank" rel="noopener">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
+        <span class="step-no">Step 2 · Submit</span>
+        <h3>Submission page on Microsoft CMT</h3>
+        <p>Sign in to Microsoft CMT (or create a free account), open the NCITIS2026 conference and upload your paper before 25 November 2026.</p>
+        <span class="host">cmt3.research.microsoft.com</span>
+        <span class="go">Go to the submission page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+    <div class="card howto reveal">
+      <h3>How it works</h3>
+      <ol>
+        <li><strong>Choose an axis.</strong> Check that your work fits one of the four conference axes.</li>
+        <li><strong>Use the template.</strong> Write the 2-page extended abstract with the official template, in Overleaf or from the .zip.</li>
+        <li><strong>Submit on CMT.</strong> Upload the paper on Microsoft CMT before 25 November 2026.</li>
+        <li><strong>Register.</strong> After acceptance (01 December), register by 02–03 December 2026.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION -->
+<section id="registration">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">05</span><span class="txt">Registration</span></div>
+      <h2>Registration fees</h2>
+      <p class="lead">At least one author of each accepted paper must register before the registration deadline.</p>
+    </div>
+    <div class="reg-grid">
+      <div class="card fees reveal">
+        <table>
+          <caption>Fees in Algerian dinars (DA)</caption>
+          <thead><tr><th scope="col">Category</th><th scope="col">In person</th><th scope="col">Online<sup>*</sup></th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Academic (university teachers)</th><td class="amt">10,000</td><td class="amt">7,000</td></tr>
+            <tr><th scope="row">Student (PhD)</th><td class="amt">8,000</td><td class="amt">5,000</td></tr>
+            <tr><th scope="row">Industrial / professional</th><td class="amt">12,000</td><td class="na">n/a</td></tr>
+            <tr><th scope="row">Second paper<sup>*</sup></th><td class="amt">4,000</td><td class="amt">3,000</td></tr>
+          </tbody>
+        </table>
+        <div class="note"><sup>*</sup> Online and second-paper rates are taken from the NCITIS’25 registration form and remain to be confirmed for this edition.</div>
+      </div>
+      <div class="reg-side">
+        <div class="card box reveal">
+          <h3>Author registration includes</h3>
+          <ul class="check">
+            <li>Access to all conference sessions</li>
+            <li>Conference proceedings</li>
+            <li>Coffee breaks and lunches on all conference days</li>
+          </ul>
+        </div>
+        <div class="card box reveal">
+          <h3>How to register</h3>
+          <p>Download and fill in the registration form, then send it with your payment receipt by email to <a href="mailto:ncitis26@univ-batna2.dz">ncitis26@univ-batna2.dz</a> before the registration deadline (02–03 December 2026). The form asks for:</p>
+          <ul class="fields"><li>First name</li><li>Last name</li><li>Affiliation</li><li>E-mail</li><li>Phone</li><li>Paper ID(s) and title(s)</li><li>Category</li></ul>
+          <a class="btn btn-navy" href="assets/NCITIS26-registration-form.docx" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Registration form (.docx)</a>
+        </div>
+        <div class="card box bank reveal">
+          <h3>Payment by bank transfer <span class="tbc">to confirm</span></h3>
+          <dl>
+            <dt>Beneficiary</dt><dd>Algerian Society of Engineering and Technology (ASET)</dd>
+            <dt>Bank</dt><dd>BADR Bank, agency 344, Batna, Algeria</dd>
+            <dt>IBAN (RIB)</dt><dd class="mono">00300344000276720017</dd>
+            <dt>SWIFT/BIC</dt><dd class="mono">BADRDZALXXX</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTEES -->
+<section id="committees">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">06</span><span class="txt">Committees</span></div>
+      <h2>Scientific and organizing committees</h2>
+    </div>
+    <div class="comm-tabs reveal" role="tablist" aria-label="Committees">
+      <button class="tab" role="tab" id="tab-sci" aria-controls="panel-sci" aria-selected="true">Scientific committee <span class="count" id="count-sci"></span></button>
+      <button class="tab" role="tab" id="tab-org" aria-controls="panel-org" aria-selected="false" tabindex="-1">Organizing committee <span class="count" id="count-org"></span></button>
+      <label class="search"><span class="sr-only">Search a member</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="member-search" placeholder="Search a member" autocomplete="off">
+      </label>
+    </div>
+
+    <div class="card panel reveal" role="tabpanel" id="panel-sci" aria-labelledby="tab-sci">
+      <div class="panel-chair"><span class="avatar g">BM</span><div><div class="role">Chair</div><div class="name">Prof. Bilal MOKHTARI · University of Batna 2</div></div></div>
+      <ul class="members">
+        <li><span class="n">Farid <b>ABBECHE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Djamel Eddine <b>ABDELAZIZ</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Adel <b>ABDELHADI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Mohamed Ridha <b>ABDESSEMED</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Wafa <b>AOUADJ</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Sofiane <b>AOUAG</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Chafik <b>ARAR</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Malika <b>BACHIR</b></span><span class="a">Univ. Batna 2</span></li>
+        <li class="ext"><span class="n">Abderrahmane <b>BADAACHE</b></span><span class="a">Univ. Algiers</span></li>
+        <li><span class="n">Radouane <b>BAGHIANI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Kamel <b>BARKA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ali <b>BEDIAF</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Amel <b>BEHAZ</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ali <b>BEHLOUL</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Soundes <b>BELKACEM</b></span><span class="a">Univ. Batna 2</span></li>
+        <li class="ext"><span class="n">Mohamed <b>BEN OTHMANE</b></span><span class="a">Univ. Khenchela</span></li>
+        <li><span class="n">Sonia-Sabrina <b>BENDIB</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Saber <b>BENHARZALLAH</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Badreddine <b>BENREGUIA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abderrazak <b>BENYAHIA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ahmed Sami <b>BERKANI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Adel <b>BERRADJ</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Azeddine <b>BILAMI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Souheila <b>BOUAM</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ikram <b>BOUBECHEL</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abdelbassette <b>CHENNA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Tahar <b>DILEKH</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Khamsa <b>DJAROUADIB</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Karima <b>DJEBAILI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Rima <b>DJELLAB</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Djamel <b>DOUHA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Hamza <b>DRID</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Nour El Houda <b>GOLEA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Samir <b>GOURDACHE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Lahcene <b>GUEZOULI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Khaled <b>HAMOUID</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Mohamed Yacine <b>HANAFI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Oussama <b>HARKATI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abdessalam <b>HATTAB</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Djalal <b>HEDJAZI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Riadh <b>HOCINE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Barkahoum <b>KADA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Nabil <b>KADACHE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ouahab <b>KADRI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Salim <b>KADRI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Hamoudi <b>KALLA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Salim <b>KALLA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Nesrine <b>KHERNANE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li class="ext"><span class="n">Abdelkader <b>LAOUID</b></span><span class="a">Univ. El Oued</span></li>
+        <li><span class="n">Abdelhamid <b>LEBBAL</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Sakina <b>MAHBOUBI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Yasmina <b>MEDJEDBA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Kamel Eddine <b>MELKEMI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Mohammed Amine <b>MERZOUG</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ghalia <b>MERZOUGUI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Oussama <b>MESSAOUDI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li class="ext"><span class="n">Foudil <b>MIR</b></span><span class="a">Univ. Béjaïa</span></li>
+        <li><span class="n">Hamouma <b>MOUMEN</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abderrafik <b>NEZZAR</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Leila <b>SAADI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Yasmina <b>SAADNA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abdellah <b>SACI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Karima <b>SAIDI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li class="ext"><span class="n">Abderrazak <b>SEBAA</b></span><span class="a">ESTIN, Béjaïa</span></li>
+        <li><span class="n">Mohamed Taki Eddine <b>SEDDIK</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Maamar <b>SEDRATI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Rachid <b>SEGHIR</b></span><span class="a">Univ. Batna 2</span></li>
+        <li class="ext"><span class="n">Abderrahim <b>SIAM</b></span><span class="a">Univ. Khenchela</span></li>
+        <li class="ext"><span class="n">Abderrahmane <b>SIDER</b></span><span class="a">Univ. Béjaïa</span></li>
+        <li class="ext"><span class="n">Abd ElKamel <b>TARI</b></span><span class="a">ESTIN, Béjaïa</span></li>
+        <li class="ext"><span class="n">Abdelhamid <b>TIOURA</b></span><span class="a">Univ. Khenchela</span></li>
+        <li><span class="n">Faiza <b>TITOUNA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Mohamed <b>TOUMI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abdelhakim <b>ZEROUAL</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Samia <b>ZOUAOUI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Siham <b>ZROUG</b></span><span class="a">Univ. Batna 2</span></li>
+      </ul>
+      <p class="empty" hidden>No member matches this search.</p>
+    </div>
+
+    <div class="card panel" role="tabpanel" id="panel-org" aria-labelledby="tab-org" hidden>
+      <div class="panel-chair"><span class="avatar g">AB</span><div><div class="role">Chair</div><div class="name">Dr. Abderrazak BENYAHIA · University of Batna 2</div></div></div>
+      <ul class="members">
+        <li><span class="n">Amel <b>BEHAZ</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Samir <b>BELHADI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Soundes <b>BELKACEM</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ikram <b>BOUBECHEL</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Rima <b>DJELLAB</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Nour El Houda <b>GOLEA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Lahcene <b>GUEZOULI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Tarek <b>HADDAD</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Abdessalam <b>HATTAB</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ouahab <b>KADRI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Nesrine <b>KHERNANE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Yasmina <b>MEDJEDBA</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Ghalia <b>MERZOUGUI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Oussama <b>MESSAOUDI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Mehdi <b>MEZAACHE</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">M’hand <b>OURLIS</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Leila <b>SAADI</b></span><span class="a">Univ. Batna 2</span></li>
+        <li><span class="n">Yasmina <b>SAADNA</b></span><span class="a">Univ. Batna 2</span></li>
+      </ul>
+      <p class="empty" hidden>No member matches this search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-label"><span class="num">07</span><span class="txt">Information</span></div>
+      <h2>Contact and venue</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="card contact reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>
+        <div><div class="k">Email</div><div class="v"><a href="mailto:ncitis26@univ-batna2.dz">ncitis26@univ-batna2.dz</a></div></div>
+      </div>
+      <div class="card contact reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/></svg></span>
+        <div><div class="k">Website</div><div class="v"><a href="https://conferences.univ-batna2.dz/ncitis26/" target="_blank" rel="noopener">conferences.univ-batna2.dz/ncitis26</a></div></div>
+      </div>
+      <div class="card contact reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+        <div><div class="k">Venue</div><div class="v">Department of Computer Science, Faculty of Mathematics and Informatics, University of Batna 2 Chahid Mostefa Benboulaïd, Batna, Algeria</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APP -->
+<section id="app">
+  <div class="container">
+    <div class="app-band reveal">
+      <div class="app-copy">
+        <div class="sec-label"><span class="num">08</span><span class="txt">Mobile app</span></div>
+        <h2>Get the NCITIS’26 app</h2>
+        <p>Tracks, key dates with countdown, submission, registration and committees in your pocket. The app installs from your browser on Android and iPhone and works offline.</p>
+        <ul class="app-feats"><li>Tracks</li><li>Key dates</li><li>Submission</li><li>Registration</li><li>Works offline</li></ul>
+        <a class="btn btn-gold" href="app/index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+          Open the app
+        </a>
+      </div>
+      <div class="app-qr">
+        <img src="assets/ncitis26-app-qr.svg" alt="QR code to install the NCITIS’26 app" width="190" height="190">
+        <span>Scan with your phone</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="gold-bar"></div>
+  <div class="container foot-grid">
+    <div class="foot-logo">
+      <img src="assets/logo-univ-batna2.png" alt="University of Batna 2">
+      <img src="assets/logo-faculte-mi.png" alt="Faculty of Mathematics and Informatics">
+    </div>
+    <div>
+      <div class="foot-title">University of Batna 2</div>
+      <div class="foot-sub">Faculty of Mathematics and Informatics · Batna, Algeria</div>
+    </div>
+    <div class="foot-links">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Conference dates: 13–14 December 2026</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><a href="mailto:ncitis26@univ-batna2.dz">ncitis26@univ-batna2.dz</a></span>
+    </div>
+  </div>
+  <div class="container cmt-ack"><p><strong>CMT acknowledgment.</strong> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p></div>
+  <div class="container foot-bottom">
+    <span>NCITIS’26 · Second National Conference on Information Technology and Intelligent Systems</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var now = new Date();
+
+  // Deadline chip
+  var deadline = new Date("2026-11-25T23:59:59+01:00");
+  var txt = document.getElementById("deadline-text");
+  var days = Math.floor((deadline - now) / 86400000);
+  if (txt) {
+    if (deadline - now <= 0) {
+      txt.innerHTML = "Abstract submission is <strong>closed</strong> (deadline was 25 November 2026)";
+      document.querySelector("#deadline-chip .dot").style.animation = "none";
+    } else if (days < 1) {
+      txt.innerHTML = "Abstract submission closes <strong>today</strong>, 25 November 2026";
+    } else if (days === 1) {
+      txt.innerHTML = "<strong>1 day left</strong> to submit · deadline 25 November 2026";
+    } else {
+      txt.innerHTML = "<strong>" + days + " days left</strong> to submit · deadline 25 November 2026";
+    }
+  }
+
+  // Timeline state
+  var steps = document.querySelectorAll(".timeline .step");
+  var nextSet = false;
+  steps.forEach(function(s){
+    var end = new Date(s.getAttribute("data-end"));
+    var state = s.querySelector(".state");
+    if (end - now < 0) { s.classList.add("done"); state.textContent = "Passed"; }
+    else if (!nextSet) { s.classList.add("next"); state.textContent = "Next"; nextSet = true; }
+  });
+
+  // Open in Overleaf: Overleaf fetches the .zip from its public URL
+  var olForm = document.getElementById("overleaf-form");
+  if (olForm) {
+    document.getElementById("snip-uri").value = new URL("assets/NCITIS26-extended-abstract-template.zip", location.href).href;
+    var isLocal = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+    if (isLocal) {
+      // Local copy (double-clicked file or local server): Overleaf cannot fetch the .zip,
+      // so the button downloads it and opens Overleaf, where the author uploads it.
+      document.getElementById("overleaf-note").textContent = "Local copy of the page: the button downloads the .zip and opens Overleaf. In Overleaf, choose New project, then Upload project, and select the downloaded file.";
+      olForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        var a = document.createElement("a");
+        a.href = "assets/NCITIS26-extended-abstract-template.zip";
+        a.download = "NCITIS26-extended-abstract-template.zip";
+        document.body.appendChild(a); a.click(); a.remove();
+        window.open("https://www.overleaf.com/project", "_blank", "noopener");
+      });
+    }
+  }
+
+  // Committee tabs
+  var tabs = document.querySelectorAll(".tab");
+  function select(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    filter();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){ select(t); });
+    t.addEventListener("keydown", function(e){
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        var n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+        n.focus(); select(n);
+      }
+    });
+  });
+  function count(id, panel){
+    document.getElementById(id).textContent = document.querySelectorAll("#" + panel + " .members li").length + 1;
+  }
+  count("count-sci", "panel-sci"); count("count-org", "panel-org");
+
+  // Member search (accent-insensitive)
+  var input = document.getElementById("member-search");
+  function norm(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  function filter(){
+    var q = norm(input.value.trim());
+    document.querySelectorAll(".panel").forEach(function(p){
+      var shown = 0;
+      p.querySelectorAll(".members li").forEach(function(li){
+        var ok = !q || norm(li.textContent).indexOf(q) !== -1;
+        li.hidden = !ok; if (ok) shown++;
+      });
+      p.querySelector(".empty").hidden = shown !== 0;
+    });
+  }
+  input.addEventListener("input", filter);
+
+  // Active nav link
+  var links = document.querySelectorAll(".nav a");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) {
+          links.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id); });
+        }
+      });
+    }, {rootMargin: "-45% 0px -50% 0px"});
+    document.querySelectorAll("main section[id]").forEach(function(s){ io.observe(s); });
+
+    // Reveal on scroll
+    var rv = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add("in"); rv.unobserve(en.target); } });
+    }, {threshold: .12});
+    document.querySelectorAll(".reveal").forEach(function(el){ rv.observe(el); });
+    // Safety net: never leave content hidden if the observer does not fire
+    setTimeout(function(){ document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); }); }, 2500);
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

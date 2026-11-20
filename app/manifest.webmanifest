@@ -1,0 +1,28 @@
+{
+  "name": "NCITIS’26 · IT and Intelligent Systems",
+  "short_name": "NCITIS’26",
+  "description": "Official app of NCITIS’26, the Second National Conference on Information Technology and Intelligent Systems, University of Batna 2, 13–14 December 2026.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071631",
+  "theme_color": "#0b1f40",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "events"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Conference tracks", "short_name": "Tracks", "url": "./#/tracks", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Key dates", "short_name": "Dates", "url": "./#/dates", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Submit a paper", "short_name": "Submit", "url": "./#/submit", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ],
+  "screenshots": [
+    { "src": "icons/screenshot-mobile.png", "sizes": "750x1334", "type": "image/png", "form_factor": "narrow", "label": "NCITIS’26 home screen" }
+  ]
+}
